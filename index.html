@@ -1,9 +1,9 @@
-
+<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Safidy – Élection Tennis de Table</title>
+<title>Safidy – Élection Section Tennis de Table Tana</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -11,7 +11,7 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
 body{background:#f2f5f9;color:#333;scroll-behavior:smooth}
 
-/* ===== PAGE 1 ===== */
+/* HERO */
 .hero{
   min-height:100vh;
   background:linear-gradient(135deg,#1f4f64,#41a62a);
@@ -28,13 +28,11 @@ body{background:#f2f5f9;color:#333;scroll-behavior:smooth}
 .hero *{position:relative;z-index:1}
 .hero img{
   width:140px;
-  height:auto;           /* garde l'aspect ratio */
-  max-height:140px;      /* limite la taille pour écran petit */
   border-radius:50%;
   border:5px solid white;
-  margin-bottom:20px;
+  margin-bottom:20px
 }
-.hero h1{font-size:1rem;margin-bottom:10px}
+.hero h1{font-size:2.4rem;margin-bottom:10px}
 .hero p{font-size:1.2rem;margin-bottom:25px;max-width:700px}
 .hero button{
   padding:12px 30px;
@@ -46,15 +44,12 @@ body{background:#f2f5f9;color:#333;scroll-behavior:smooth}
   cursor:pointer;
   transition:.3s
 }
-.hero button:hover{transform:scale(1.1)}
+.hero button:hover{transform:scale(1.08)}
 
-/* VIDEO */
 .video-box{
   margin-top:40px;
   max-width:900px;
   width:100%;
- 
-
   border-radius:20px;
   box-shadow:0 15px 30px rgba(0,0,0,.3)
 }
@@ -63,33 +58,29 @@ body{background:#f2f5f9;color:#333;scroll-behavior:smooth}
   border-radius:15px
 }
 
-/* ===== PAGE 2 ===== */
-.page2{
-  min-height:100vh;
-  padding:70px 20px;
-  background:white;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between
+/* PAGE PROGRAMME */
+.page{
+  padding:80px 20px;
+  background:white
 }
-
-/* PROGRAM */
-.program{
+.section{
   max-width:1100px;
   margin:auto;
   text-align:center
 }
-.program h2{
+.section h2{
   font-size:2.4rem;
   color:#1f4f64;
-  margin-bottom:40px
+  margin-bottom:50px
 }
-.program-grid{
+
+/* GRID */
+.grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:30px
 }
-.program-card{
+.card{
   padding:35px 25px;
   border-radius:25px;
   color:white;
@@ -99,24 +90,26 @@ body{background:#f2f5f9;color:#333;scroll-behavior:smooth}
   transform:translateY(30px);
   transition:1s
 }
-.program-card.visible{
+.card.visible{
   opacity:1;
   transform:translateY(0)
 }
-.program-card h3{margin-bottom:15px;font-size:1.4rem}
-.program-card ul{list-style:none}
-.program-card li{margin-bottom:10px}
+.card h3{margin-bottom:15px;font-size:1.4rem}
+.card ul{list-style:none}
+.card li{margin-bottom:10px}
 
-.vulgarisation{background:linear-gradient(135deg,#c80018,#ff4b4b)}
-.digitalisation{background:linear-gradient(135deg,#41a62a,#85d55d)}
-.remuneration{background:linear-gradient(135deg,#1f4f64,#3b7aa7)}
+/* COLORS ANNUELLES */
+.y2026{background:linear-gradient(135deg,#1f4f64,#3b7aa7)}
+.y2027{background:linear-gradient(135deg,#41a62a,#85d55d)}
+.y2028{background:linear-gradient(135deg,#c80018,#ff4b4b)}
+.y2029{background:linear-gradient(135deg,#6a1b9a,#ab47bc)}
 
 /* WHY */
 .why{
   max-width:900px;
-  margin:60px auto 20px;
+  margin:70px auto 0;
   text-align:center;
-  padding:30px;
+  padding:35px;
   background:#f2f5f9;
   border-radius:25px;
   box-shadow:0 10px 20px rgba(0,0,0,.1)
@@ -126,7 +119,7 @@ body{background:#f2f5f9;color:#333;scroll-behavior:smooth}
 /* FOOTER */
 footer{
   text-align:center;
-  padding:20px;
+  padding:25px;
   font-size:.9rem;
   color:#777
 }
@@ -140,16 +133,15 @@ footer{
 
 <body>
 
-<!-- PAGE 1 -->
+<!-- HERO -->
 <section class="hero">
-  <img src="me.jpg">
+  <img src="me.jpg" alt="Safidy">
   <h1>Safidy Rotolonandrasana</h1>
   <p>
-    Pour une section Tennis de Table moderne, accessible,
-    performante et tournée vers l’avenir.
+    Pour une Section Tennis de Table de Tana moderne, structurée et accessible à tous.
   </p>
-  <button onclick="document.getElementById('page2').scrollIntoView({behavior:'smooth'})">
-    Découvrir mon programme etablie par mon equipe
+  <button onclick="document.getElementById('programme').scrollIntoView({behavior:'smooth'})">
+    Découvrir notre programme 2026–2029
   </button>
 
   <div class="video-box">
@@ -159,41 +151,66 @@ footer{
   </div>
 </section>
 
-<!-- PAGE 2 -->
-<section class="page2" id="page2">
+<!-- PROGRAMME -->
+<section class="page" id="programme">
+  <div class="section">
+    <h2>Programme 2026 – 2029</h2>
 
-  <div class="program">
-    <h2>Notre Programme</h2>
+    <div class="grid">
 
-    <div class="program-grid">
-
-      <div class="program-card vulgarisation observe">
-        <h3>🎯 Vulgarisation</h3>
+      <!-- 2026 -->
+      <div class="card y2026 observe">
+        <h3> 2026 – Mise en place</h3>
         <ul>
-          <li>Initiation  pour jeunes et débutants</li>
-          <li>Tournois locaux et inter-quartiers</li>
-          <li>Ateliers techniques réguliers</li>
-          <li>Détection des talents</li>
+          <li>Digitalisation simple : gestion matchs joueurs et arbitres</li>
+          <li>Initiation jeunes et débutants</li>
+          <li>Matchs de section mensuels</li>
+          <li>Mise en place de tournois par catégories</li>
+          <li>Détection des jeunes talents</li>
+          <li>Formation initiale : joueurs, arbitres, animateurs</li>
+          <li>Mise en place d’un système de communication moderne</li>
         </ul>
       </div>
 
-      <div class="program-card digitalisation observe">
-        <h3>💻 Digitalisation</h3>
+      <!-- 2027 -->
+      <div class="card y2027 observe">
+        <h3> 2027 – Structuration</h3>
         <ul>
-          <li>Inscriptions et licences en ligne</li>
-          <li>Classements numériques</li>
-          <li>Suivi des performances</li>
-          <li>Vidéos pédagogiques</li>
+          <li>Mise en place d’un système d’information numérique en ligne</li>
+          <li>Formations continues pour arbitres et joueurs</li>
+          <li>Partenariats avec écoles, universités et entreprises locales</li>
+          <li>Matchs de section réguliers et tournois trimestriels</li>
+          <li>Classements et statistiques en ligne</li>
+          <li>Communication structurée : publications et résultats</li>
         </ul>
       </div>
 
-      <div class="program-card remuneration observe">
-        <h3>🏆 Valorisation</h3>
+      <!-- 2028 -->
+      <div class="card y2028 observe">
+        <h3>2028 – Performance & durabilité</h3>
         <ul>
-          <li>Primes de performance</li>
-          <li>Soutien aux entraîneurs</li>
-          <li>Aides aux compétitions</li>
-          <li>Partenariats et sponsors</li>
+          <li>Système de soutien aux joueurs et entraîneurs</li>
+          <li>Stages techniques régionaux</li>
+          <li>Vulgarisation continue et rayonnement local</li>
+          <li>Matchs de section + tournoi annuel majeur à Tana</li>
+          <li>Visibilité médiatique et réseaux sociaux</li>
+          <li>Autonomie financière  : sponsors et événements</li>
+          <li>Bilan et transmission durable des bonnes pratiques</li>
+        </ul>
+      </div>
+
+      <!-- 2029 -->
+      <div class="card y2029 observe">
+        <h3> 2029 – Rayonnement national & autonomie</h3>
+        <ul>
+          <li>Matchs de section réguliers et finales</li>
+          <li>Tournoi majeur national à Tana</li>
+          <li>Soutien complet aux joueurs et entraîneurs</li>
+          <li>Stages techniques avancés pour talents détectés</li>
+          <li>Vulgarisation et inclusion (femmes, loisirs, quartiers)</li>
+          <li>Communication active : réseaux sociaux et médias locaux</li>
+          <li>Autonomie financière  : sponsors et événements</li>
+          <li>Bilan final et transmission durable à la future équipe</li>
         </ul>
       </div>
 
@@ -203,33 +220,29 @@ footer{
   <div class="why">
     <h2>Pourquoi je me présente</h2>
     <p>
-      Je veux une section structurée, équitable et ambitieuse,
-      où chaque joueur est accompagné, reconnu et motivé.
+      Parce que notre section mérite une vision claire, progressive et durable.  
+      Ensemble, construisons une structure solide, équitable et tournée vers l’avenir du tennis de table à Madagascar.
     </p>
   </div>
 
   <footer>
-    © 2026 – Safidy Rotolonandrasana
+    © 2026–2029 • Safidy Rotolonandrasana • Section Tennis de Table Tana
   </footer>
-
 </section>
 
 <script>
 /* Animation programme */
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
     if(e.isIntersecting){
       e.target.classList.add('visible');
       observer.unobserve(e.target);
     }
   });
-},{threshold:.2});
+},{threshold:0.2});
 
-document.querySelectorAll('.observe')
-  .forEach(el=>observer.observe(el));
+document.querySelectorAll('.observe').forEach(el => observer.observe(el));
 </script>
 
 </body>
 </html>
-
-
