@@ -42,39 +42,88 @@ body{background:#f2f5f9;color:#333;scroll-behavior:smooth}
   color:white;
   font-weight:600;
   cursor:pointer;
-  transition:.3s
+  transition:.3s;
+  margin:10px;
 }
 .hero button:hover{transform:scale(1.08)}
 
+/* VIDEO DESIGN BOX */
 .video-box{
   margin-top:40px;
   max-width:900px;
   width:100%;
   border-radius:20px;
-  box-shadow:0 15px 30px rgba(0,0,0,.3)
+  box-shadow:0 15px 30px rgba(0,0,0,.3);
+  overflow:hidden;
 }
 .video-box video{
   width:100%;
-  border-radius:15px
+  display:block;
+  border-radius:15px;
 }
 
-/* PAGE PROGRAMME */
-.page{
-  padding:80px 20px;
-  background:white
+/* CV PANEL RIGHT TO LEFT */
+#cvPanel{
+  position:fixed;
+  top:0;
+  right:-100%;
+  width:100%;
+  max-width:600px;
+  height:100%;
+  background:white;
+  box-shadow:-5px 0 20px rgba(0,0,0,.2);
+  transition:0.6s ease;
+  z-index:999;
+  overflow-y:auto;
 }
-.section{
-  max-width:1100px;
-  margin:auto;
-  text-align:center
+#cvPanel.open{
+  right:0;
 }
-.section h2{
-  font-size:2.4rem;
+.cv-header{
+  background:linear-gradient(135deg,#1f4f64,#41a62a);
+  color:white;
+  padding:25px;
+  text-align:center;
+  position:relative;
+}
+.cv-header img{
+  width:120px;
+  border-radius:50%;
+  border:4px solid white;
+  margin-bottom:10px;
+}
+.cv-header h2{
+  margin-bottom:5px;
+}
+.cv-header p{
+  font-size:0.95rem;
+}
+.close-btn{
+  position:absolute;
+  top:15px;
+  left:15px;
+  background:#c80018;
+  color:white;
+  border:none;
+  padding:8px 15px;
+  border-radius:20px;
+  cursor:pointer;
+}
+.cv-content{padding:25px}
+.cv-section{margin-bottom:25px}
+.cv-section h3{
   color:#1f4f64;
-  margin-bottom:50px
+  margin-bottom:10px;
+  border-bottom:2px solid #1f4f64;
+  padding-bottom:5px;
 }
+.cv-section ul{list-style:none;padding-left:0}
+.cv-section li{margin-bottom:8px}
 
-/* GRID */
+/* PAGE / PROGRAMME */
+.page{padding:80px 20px;background:white}
+.section{max-width:1100px;margin:auto;text-align:center}
+.section h2{font-size:2.4rem;color:#1f4f64;margin-bottom:50px}
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -95,38 +144,20 @@ body{background:#f2f5f9;color:#333;scroll-behavior:smooth}
   transform:translateY(0)
 }
 .card h3{margin-bottom:15px;font-size:1.4rem}
-.card ul{list-style:none}
+.card ul{list-style:none;padding-left:0}
 .card li{margin-bottom:10px}
-
-/* COLORS ANNUELLES */
 .y2026{background:linear-gradient(135deg,#1f4f64,#3b7aa7)}
 .y2027{background:linear-gradient(135deg,#41a62a,#85d55d)}
 .y2028{background:linear-gradient(135deg,#c80018,#ff4b4b)}
 .y2029{background:linear-gradient(135deg,#6a1b9a,#ab47bc)}
 
-/* WHY */
-.why{
-  max-width:900px;
-  margin:70px auto 0;
-  text-align:center;
-  padding:35px;
-  background:#f2f5f9;
-  border-radius:25px;
-  box-shadow:0 10px 20px rgba(0,0,0,.1)
-}
-.why h2{color:#1f4f64;margin-bottom:15px}
-
 /* FOOTER */
-footer{
-  text-align:center;
-  padding:25px;
-  font-size:.9rem;
-  color:#777
-}
+footer{text-align:center;padding:25px;font-size:.9rem;color:#777}
 
 /* RESPONSIVE */
 @media(max-width:768px){
   .hero h1{font-size:2.2rem}
+  #cvPanel{max-width:100%}
 }
 </style>
 </head>
@@ -137,101 +168,114 @@ footer{
 <section class="hero">
   <img src="me.jpg" alt="Safidy">
   <h1>Safidy Rotolonandrasana</h1>
-  <p>
-    Pour une Section Tennis de Table de Tana moderne, structurée et accessible à tous.
-  </p>
-  <button onclick="document.getElementById('programme').scrollIntoView({behavior:'smooth'})">
-    Découvrir notre programme 2026–2029
-  </button>
+  <p>Pour une Section Tennis de Table de Tana moderne, structurée et accessible à tous.</p>
+
+  <div>
+    <button onclick="openCV()">Voir mon CV Sportif</button>
+    <button onclick="document.getElementById('programme').scrollIntoView({behavior:'smooth'})">
+      Découvrir notre programme 2026–2029
+    </button>
+  </div>
 
   <div class="video-box">
     <video autoplay loop muted playsinline>
       <source src="Campagne.mp4" type="video/mp4">
+      Votre navigateur ne supporte pas la vidéo.
     </video>
   </div>
 </section>
+
+<!-- CV PANEL RIGHT -->
+<div id="cvPanel">
+  <div class="cv-header">
+    <button class="close-btn" onclick="closeCV()">Fermer</button>
+    <img src="me.jpg" alt="Safidy">
+    <h2>Safidy Rotolonandrasana</h2>
+    <p>Joueur – Entraîneur – Manager Sportif</p>
+  </div>
+
+  <div class="cv-content">
+    <div class="cv-section">
+      <h3>Profil Personnel</h3>
+      <ul>
+        <li>Originaire de Moramanga</li>
+        <li>Résidant à Antananarivo depuis 2009</li>
+        <li>Marié, père de deux enfants</li>
+        <li>Ingénieur Géophysicien</li>
+      </ul>
+    </div>
+
+    <div class="cv-section">
+      <h3>Parcours Sportif</h3>
+      <ul>
+        <li>Ancien membre de l’Équipe Nationale Junior</li>
+        <li>Ancien membre de l’Équipe Nationale Senior</li>
+        <li>Compétiteur en 1ère Division Homme</li>
+      </ul>
+    </div>
+
+    <div class="cv-section">
+      <h3>Compétences</h3>
+      <ul>
+        <li>Gestion de projets sportifs</li>
+        <li>Leadership et communication</li>
+        <li>Organisation d’événements</li>
+      </ul>
+    </div>
+  </div>
+</div>
 
 <!-- PROGRAMME -->
 <section class="page" id="programme">
   <div class="section">
     <h2>Programme 2026 – 2029</h2>
-
     <div class="grid">
-
-      <!-- 2026 -->
       <div class="card y2026 observe">
-        <h3> 2026 – Mise en place</h3>
+        <h3>2026 – Mise en place</h3>
         <ul>
-          <li>Digitalisation simple : gestion matchs joueurs et arbitres</li>
-          <li>Initiation jeunes et débutants</li>
-          <li>Matchs de section mensuels</li>
-          <li>Mise en place de tournois par catégories</li>
-          <li>Détection des jeunes talents</li>
-          <li>Formation initiale : joueurs, arbitres, animateurs</li>
-          <li>Mise en place d’un système de communication moderne</li>
+          <li>Digitalisation simple</li>
+          <li>Initiation jeunes</li>
+          <li>Matchs mensuels</li>
         </ul>
       </div>
-
-      <!-- 2027 -->
       <div class="card y2027 observe">
-        <h3> 2027 – Structuration</h3>
+        <h3>2027 – Structuration</h3>
         <ul>
-          <li>Mise en place d’un système d’information numérique en ligne</li>
-          <li>Formations continues pour arbitres et joueurs</li>
-          <li>Partenariats avec écoles, universités et entreprises locales</li>
-          <li>Matchs de section réguliers et tournois trimestriels</li>
-          <li>Classements et statistiques en ligne</li>
-          <li>Communication structurée : publications et résultats</li>
+          <li>Système d’information</li>
+          <li>Formations continues</li>
+          <li>Partenariats locaux</li>
         </ul>
       </div>
-
-      <!-- 2028 -->
       <div class="card y2028 observe">
-        <h3>2028 – Performance & durabilité</h3>
+        <h3>2028 – Performance</h3>
         <ul>
-          <li>Système de soutien aux joueurs et entraîneurs</li>
-          <li>Stages techniques régionaux</li>
-          <li>Vulgarisation continue et rayonnement local</li>
-          <li>Matchs de section + tournoi annuel majeur à Tana</li>
-          <li>Visibilité médiatique et réseaux sociaux</li>
-          <li>Autonomie financière  : sponsors et événements</li>
-          <li>Bilan et transmission durable des bonnes pratiques</li>
+          <li>Stages techniques</li>
+          <li>Rayonnement local</li>
         </ul>
       </div>
-
-      <!-- 2029 -->
       <div class="card y2029 observe">
-        <h3> 2029 – Rayonnement national & autonomie</h3>
+        <h3>2029 – Autonomie</h3>
         <ul>
-          <li>Matchs de section réguliers et finales</li>
-          <li>Tournoi majeur national à Tana</li>
-          <li>Soutien complet aux joueurs et entraîneurs</li>
-          <li>Stages techniques avancés pour talents détectés</li>
-          <li>Vulgarisation et inclusion (femmes, loisirs, quartiers)</li>
-          <li>Communication active : réseaux sociaux et médias locaux</li>
-          <li>Autonomie financière  : sponsors et événements</li>
-          <li>Bilan final et transmission durable à la future équipe</li>
+          <li>Tournoi national</li>
+          <li>Autonomie financière</li>
         </ul>
       </div>
-
     </div>
   </div>
-
-  <div class="why">
-    <h2>Pourquoi je me présente</h2>
-    <p>
-      Parce que notre section mérite une vision claire, progressive et durable.  
-      Ensemble, construisons une structure solide, équitable et tournée vers l’avenir du tennis de table à Madagascar.
-    </p>
-  </div>
-
   <footer>
     © 2026–2029 • Safidy Rotolonandrasana • Section Tennis de Table Tana
   </footer>
 </section>
 
 <script>
-/* Animation programme */
+function openCV(){
+  document.getElementById("cvPanel").classList.add("open");
+}
+function closeCV(){
+  document.getElementById("cvPanel").classList.remove("open");
+}
+
+/* Animation des cartes */
 const observer = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if(e.isIntersecting){
@@ -240,7 +284,6 @@ const observer = new IntersectionObserver(entries => {
     }
   });
 },{threshold:0.2});
-
 document.querySelectorAll('.observe').forEach(el => observer.observe(el));
 </script>
 
