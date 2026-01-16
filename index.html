@@ -305,7 +305,14 @@ footer{text-align:center;padding:25px;font-size:.9rem;color:#777}
 </section>
 
 <script>
-/* Animation programme */
+function openCV(){
+  document.getElementById("cvPanel").classList.add("open");
+}
+function closeCV(){
+  document.getElementById("cvPanel").classList.remove("open");
+}
+
+/* Animation des cartes */
 const observer = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if(e.isIntersecting){
@@ -314,9 +321,9 @@ const observer = new IntersectionObserver(entries => {
     }
   });
 },{threshold:0.2});
-
 document.querySelectorAll('.observe').forEach(el => observer.observe(el));
 </script>
 
 </body>
 </html>
+
