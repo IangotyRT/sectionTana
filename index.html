@@ -229,53 +229,83 @@ footer{text-align:center;padding:25px;font-size:.9rem;color:#777}
 <section class="page" id="programme">
   <div class="section">
     <h2>Programme 2026 – 2029</h2>
+
     <div class="grid">
+
+      <!-- 2026 -->
       <div class="card y2026 observe">
-        <h3>2026 – Mise en place</h3>
+        <h3> 2026 – Mise en place</h3>
         <ul>
-          <li>Digitalisation simple</li>
-          <li>Initiation jeunes</li>
-          <li>Matchs mensuels</li>
+          <li>Digitalisation simple : gestion matchs joueurs et arbitres</li>
+          <li>Initiation jeunes et débutants</li>
+          <li>Matchs de section mensuels</li>
+          <li>Mise en place de tournois par catégories</li>
+          <li>Détection des jeunes talents</li>
+          <li>Formation initiale : joueurs, arbitres, animateurs</li>
+          <li>Mise en place d’un système de communication moderne</li>
         </ul>
       </div>
+
+      <!-- 2027 -->
       <div class="card y2027 observe">
-        <h3>2027 – Structuration</h3>
+        <h3> 2027 – Structuration</h3>
         <ul>
-          <li>Système d’information</li>
-          <li>Formations continues</li>
-          <li>Partenariats locaux</li>
+          <li>Mise en place d’un système d’information numérique en ligne</li>
+          <li>Formations continues pour arbitres et joueurs</li>
+          <li>Partenariats avec écoles, universités et entreprises locales</li>
+          <li>Matchs de section réguliers et tournois trimestriels</li>
+          <li>Classements et statistiques en ligne</li>
+          <li>Communication structurée : publications et résultats</li>
         </ul>
       </div>
+
+      <!-- 2028 -->
       <div class="card y2028 observe">
-        <h3>2028 – Performance</h3>
+        <h3>2028 – Performance & durabilité</h3>
         <ul>
-          <li>Stages techniques</li>
-          <li>Rayonnement local</li>
+          <li>Système de soutien aux joueurs et entraîneurs</li>
+          <li>Stages techniques régionaux</li>
+          <li>Vulgarisation continue et rayonnement local</li>
+          <li>Matchs de section + tournoi annuel majeur à Tana</li>
+          <li>Visibilité médiatique et réseaux sociaux</li>
+          <li>Autonomie financière  : sponsors et événements</li>
+          <li>Bilan et transmission durable des bonnes pratiques</li>
         </ul>
       </div>
+
+      <!-- 2029 -->
       <div class="card y2029 observe">
-        <h3>2029 – Autonomie</h3>
+        <h3> 2029 – Rayonnement national & autonomie</h3>
         <ul>
-          <li>Tournoi national</li>
-          <li>Autonomie financière</li>
+          <li>Matchs de section réguliers et finales</li>
+          <li>Tournoi majeur national à Tana</li>
+          <li>Soutien complet aux joueurs et entraîneurs</li>
+          <li>Stages techniques avancés pour talents détectés</li>
+          <li>Vulgarisation et inclusion (femmes, loisirs, quartiers)</li>
+          <li>Communication active : réseaux sociaux et médias locaux</li>
+          <li>Autonomie financière  : sponsors et événements</li>
+          <li>Bilan final et transmission durable à la future équipe</li>
         </ul>
       </div>
+
     </div>
   </div>
+
+  <div class="why">
+    <h2>Pourquoi je me présente</h2>
+    <p>
+      Parce que notre section mérite une vision claire, progressive et durable.  
+      Ensemble, construisons une structure solide, équitable et tournée vers l’avenir du tennis de table à Madagascar.
+    </p>
+  </div>
+
   <footer>
     © 2026–2029 • Safidy Rotolonandrasana • Section Tennis de Table Tana
   </footer>
 </section>
 
 <script>
-function openCV(){
-  document.getElementById("cvPanel").classList.add("open");
-}
-function closeCV(){
-  document.getElementById("cvPanel").classList.remove("open");
-}
-
-/* Animation des cartes */
+/* Animation programme */
 const observer = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if(e.isIntersecting){
@@ -284,6 +314,7 @@ const observer = new IntersectionObserver(entries => {
     }
   });
 },{threshold:0.2});
+
 document.querySelectorAll('.observe').forEach(el => observer.observe(el));
 </script>
 
