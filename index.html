@@ -12,12 +12,12 @@
         :root {
             --primary: #00994d; /* Vert dynamique */
             --secondary: #0f172a; /* Bleu nuit profond */
-            --accent: #e11d48; /* Rouge énergique pour les boutons/actions */
+            --accent: #e11d48; /* Rouge énergique pour les boutons */
             --light: #f8fafc;
-            --gradient-26: linear-gradient(135deg, #4ade80 0%, #16a34a 100%);
-            --gradient-27: linear-gradient(135deg, #2dd4bf 0%, #0d9488 100%);
-            --gradient-28: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
-            --gradient-29: linear-gradient(135deg, #818cf8 0%, #4f46e5 100%);
+            --gradient-26: linear-gradient(135deg, #1f4f64 0%, #3b7aa7 100%);
+            --gradient-27: linear-gradient(135deg, #41a62a 0%, #85d55d 100%);
+            --gradient-28: linear-gradient(135deg, #c80018 0%, #ff4b4b 100%);
+            --gradient-29: linear-gradient(135deg, #6a1b9a 0%, #ab47bc 100%);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
@@ -28,7 +28,7 @@
         /* --- HERO SECTION --- */
         .hero {
             position: relative;
-            min-height: 100vh; /* Prend toute la hauteur de l'écran */
+            min-height: 100vh;
             background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(0, 153, 77, 0.85)), url('https://source.unsplash.com/random/1920x1080/?tabletennis');
             background-size: cover;
             background-position: center;
@@ -96,7 +96,7 @@
         .video-box video {
             width: 100%;
             display: block;
-            border-radius: 16px; /* Légèrement moins que le conteneur pour éviter les coupures */
+            border-radius: 16px; 
         }
 
         /* --- METHODOLOGIE (Le Cycle) --- */
@@ -156,12 +156,11 @@
         .cycle-step:hover .cycle-icon { background: var(--primary); color: white; transform: rotate(360deg); }
 
         .cycle-step h4 { font-size: 1.2rem; color: var(--secondary); margin-bottom: 5px; }
-        .cycle-step p { font-size: 0.9rem; color: #666; }
 
-        /* Flèches entre les étapes (Desktop seulement) */
+        /* Flèches entre les étapes */
         @media(min-width: 992px) {
             .cycle-step:not(:last-child)::after {
-                content: '\f061'; /* FontAwesome Arrow Right */
+                content: '\f061'; /* Arrow Right */
                 font-family: 'Font Awesome 6 Free';
                 font-weight: 900;
                 position: absolute;
@@ -194,7 +193,7 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             transition: transform 0.4s ease, box-shadow 0.4s ease;
             opacity: 0;
-            transform: translateY(30px); /* Pour l'animation */
+            transform: translateY(30px);
         }
 
         .year-card:hover {
@@ -205,16 +204,17 @@
         .year-header {
             padding: 25px;
             color: white;
-            position: relative;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
+            text-align: center;
         }
 
-        .year-number { font-size: 2.5rem; font-weight: 800; opacity: 0.9; }
-        .year-title { font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; text-align: right; }
+        .year-number { font-size: 2.5rem; font-weight: 800; }
+        .year-title { font-size: 1.2rem; font-weight: 600; margin-top: 5px; text-transform: uppercase; }
 
-        /* Couleurs spécifiques par année */
+        /* Couleurs (Fidèles à l'image : Bleu, Vert, Rouge, Violet) */
         .card-2026 .year-header { background: var(--gradient-26); }
         .card-2027 .year-header { background: var(--gradient-27); }
         .card-2028 .year-header { background: var(--gradient-28); }
@@ -230,11 +230,19 @@
             line-height: 1.5;
         }
         
-        /* Puces colorées dynamiques */
-        .card-2026 li::before { content: '✔'; color: #16a34a; position: absolute; left: 0; font-weight: bold; }
-        .card-2027 li::before { content: '✔'; color: #0d9488; position: absolute; left: 0; font-weight: bold; }
-        .card-2028 li::before { content: '✔'; color: #0284c7; position: absolute; left: 0; font-weight: bold; }
-        .card-2029 li::before { content: '✔'; color: #4f46e5; position: absolute; left: 0; font-weight: bold; }
+        .year-body ul li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            font-size: 1.5rem;
+            line-height: 1rem;
+            color: #ccc;
+        }
+        
+        .card-2026 li::before { color: #1f4f64; }
+        .card-2027 li::before { color: #41a62a; }
+        .card-2028 li::before { color: #c80018; }
+        .card-2029 li::before { color: #6a1b9a; }
 
         /* --- SIDEBAR CV --- */
         .cv-sidebar {
@@ -301,7 +309,6 @@
             .hero h1 { font-size: 2rem; }
             .cycle-container { flex-direction: column; align-items: center; }
             .cycle-step::after { display: none; }
-            .year-header { flex-direction: column-reverse; gap: 5px; text-align: center; }
         }
     </style>
 </head>
@@ -348,7 +355,7 @@
         <div class="hero-content">
             <img src="me.jpg" alt="Safidy" class="profile-pic"> 
             <h1>SAFIDY ROTOLONANDRASANA</h1>
-            <p class="subtitle">Une vision moderne pour le Tennis de Table à Tana</p>
+            <p class="subtitle">Programme Process Stages</p>
             
             <div class="btn-group">
                 <button class="btn btn-primary" onclick="document.getElementById('programme').scrollIntoView({behavior: 'smooth'})">
@@ -369,34 +376,28 @@
     </section>
 
     <section class="methodology">
-        <h2 class="section-title">Notre Processus</h2>
-        <p style="margin-bottom:40px; color:#666;">Une approche cyclique et structurée pour garantir le succès.</p>
+        <h2 class="section-title">Programme Process Stages</h2>
         
         <div class="cycle-container">
             <div class="cycle-step">
                 <div class="cycle-icon"><i class="fas fa-bullseye"></i></div>
                 <h4>Objectif</h4>
-                <p>Vision claire</p>
             </div>
             <div class="cycle-step">
                 <div class="cycle-icon"><i class="fas fa-clipboard-check"></i></div>
-                <h4>Préparation</h4>
-                <p>Planification</p>
+                <h4>Preparation</h4>
             </div>
             <div class="cycle-step">
                 <div class="cycle-icon"><i class="fas fa-pencil-ruler"></i></div>
-                <h4>Élaboration</h4>
-                <p>Création</p>
+                <h4>Elaboration</h4>
             </div>
             <div class="cycle-step">
                 <div class="cycle-icon"><i class="fas fa-hand-holding-dollar"></i></div>
                 <h4>Financement</h4>
-                <p>Ressources</p>
             </div>
             <div class="cycle-step">
                 <div class="cycle-icon"><i class="fas fa-flag-checkered"></i></div>
-                <h4>Réalisation</h4>
-                <p>Action</p>
+                <h4>Realisation</h4>
             </div>
         </div>
     </section>
@@ -404,23 +405,23 @@
     <section class="timeline-section" id="programme">
         <div style="text-align:center; margin-bottom:50px;">
             <h2 class="section-title">Programme 2026 - 2029</h2>
-            <p>Une feuille de route précise pour redynamiser la section.</p>
         </div>
 
         <div class="timeline-grid">
             <div class="year-card card-2026 scroll-animate">
                 <div class="year-header">
                     <span class="year-number">2026</span>
-                    <span class="year-title">Lancement &<br>Fondations</span>
+                    <span class="year-title">Mise en place</span>
                 </div>
                 <div class="year-body">
                     <ul>
-                        <li><strong>Digitalisation :</strong> Plateforme gestion joueurs/arbitres</li>
-                        <li><strong>Initiation :</strong> Programmes jeunes & débutants</li>
-                        <li><strong>Compétition :</strong> Tournois par catégories d'âge</li>
-                        <li><strong>Détection :</strong> Identification des talents</li>
-                        <li><strong>Formation :</strong> Joueurs, arbitres, animateurs</li>
-                        <li><strong>Comms :</strong> Système de communication moderne</li>
+                        <li>Digitalisation : gestion matchs joueurs et arbitres</li>
+                        <li>Initiation jeunes et débutants</li>
+                        <li>Matchs de section</li>
+                        <li>Mise en place de tournois par catégories</li>
+                        <li>Détection des jeunes talents</li>
+                        <li>Formation : joueurs, arbitres, animateurs</li>
+                        <li>Mise en place d'un système de communication moderne</li>
                     </ul>
                 </div>
             </div>
@@ -428,15 +429,16 @@
             <div class="year-card card-2027 scroll-animate">
                 <div class="year-header">
                     <span class="year-number">2027</span>
-                    <span class="year-title">Expansion &<br>Partenariats</span>
+                    <span class="year-title">Structuration</span>
                 </div>
                 <div class="year-body">
                     <ul>
-                        <li><strong>Data :</strong> Système d'information & Stats en ligne</li>
-                        <li><strong>Réseau :</strong> Partenariats écoles, universités, entreprises</li>
-                        <li><strong>Terrain :</strong> Matchs de section réguliers</li>
-                        <li><strong>Suivi :</strong> Classements en temps réel</li>
-                        <li><strong>Visibilité :</strong> Communication structurée des résultats</li>
+                        <li>Mise en place d'un système d'information numérique en ligne</li>
+                        <li>Formations continues pour arbitres et joueurs</li>
+                        <li>Partenariats avec écoles, universités et entreprises locales</li>
+                        <li>Matchs de section réguliers et tournois trimestriels</li>
+                        <li>Classements et statistiques en ligne</li>
+                        <li>Communication structurée : publications et résultats</li>
                     </ul>
                 </div>
             </div>
@@ -444,16 +446,17 @@
             <div class="year-card card-2028 scroll-animate">
                 <div class="year-header">
                     <span class="year-number">2028</span>
-                    <span class="year-title">Performance &<br>Durabilité</span>
+                    <span class="year-title">Performance &<br>durabilité</span>
                 </div>
                 <div class="year-body">
                     <ul>
-                        <li><strong>Expertise :</strong> Stages techniques régionaux</li>
-                        <li><strong>Élite :</strong> Tournoi Annuel Majeur à Tana</li>
-                        <li><strong>Soutien :</strong> Aide aux joueurs et entraîneurs</li>
-                        <li><strong>Média :</strong> Visibilité accrue réseaux sociaux</li>
-                        <li><strong>Autonomie :</strong> Recherche active de sponsors</li>
-                        <li><strong>Héritage :</strong> Transmission des bonnes pratiques</li>
+                        <li>Système de soutien aux joueurs et entraîneurs</li>
+                        <li>Stages techniques</li>
+                        <li>Vulgarisation continue et rayonnement local</li>
+                        <li>Matchs de section + tournoi annuel majeur à Tana</li>
+                        <li>Visibilité médiatique et réseaux sociaux</li>
+                        <li>Autonomie : sponsors et événements</li>
+                        <li>Bilan et transmission durable des bonnes pratiques</li>
                     </ul>
                 </div>
             </div>
@@ -461,15 +464,18 @@
             <div class="year-card card-2029 scroll-animate">
                 <div class="year-header">
                     <span class="year-number">2029</span>
-                    <span class="year-title">Rayonnement &<br>Autonomie</span>
+                    <span class="year-title">Rayonnement national<br>& autonomie</span>
                 </div>
                 <div class="year-body">
                     <ul>
-                        <li><strong>Inclusion :</strong> Femmes, loisirs, quartiers</li>
-                        <li><strong>Stabilité :</strong> Autonomie via sponsors & événements</li>
-                        <li><strong>National :</strong> Tournoi majeur national</li>
-                        <li><strong>Elite :</strong> Stages avancés pour talents détectés</li>
-                        <li><strong>Bilan :</strong> Transmission durable à la future équipe</li>
+                        <li>Matchs de section réguliers</li>
+                        <li>Tournoi majeur national à Tana</li>
+                        <li>Soutien aux joueurs et entraîneurs</li>
+                        <li>Stages techniques avancés pour talents détectés</li>
+                        <li>Vulgarisation et inclusion (femmes, loisirs, quartiers)</li>
+                        <li>Communication active : réseaux sociaux et médias locaux</li>
+                        <li>Autonomie : sponsors et événements</li>
+                        <li>Bilan final et transmission durable à la future équipe</li>
                     </ul>
                 </div>
             </div>
@@ -484,7 +490,7 @@
             <a href="#" style="margin: 0 10px;"><i class="fab fa-instagram"></i></a>
             <a href="#" style="margin: 0 10px;"><i class="fas fa-envelope"></i></a>
         </div>
-        <p style="margin-top: 30px; font-size: 0.8rem;">© 2026 Campagne Section Tana. Tous droits réservés.</p>
+        <p style="margin-top: 30px; font-size: 0.8rem;">© 2026 Campagne Section Tana.</p>
     </footer>
 
     <script>
@@ -501,7 +507,6 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    // On arrête d'observer une fois animé
                     observer.unobserve(entry.target);
                 }
             });
@@ -509,7 +514,6 @@
             threshold: 0.1
         });
 
-        // Cible tous les éléments à animer
         document.querySelectorAll('.scroll-animate').forEach((el) => {
             observer.observe(el);
         });
