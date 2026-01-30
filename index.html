@@ -1,333 +1,491 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Safidy – Élection Section Tennis de Table Tana</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safidy 2026 - Candidat Section Tennis de Table Tana</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00994d; /* Vert dynamique */
+            --secondary: #0f172a; /* Bleu nuit profond */
+            --accent: #e11d48; /* Rouge énergique pour les boutons/actions */
+            --light: #f8fafc;
+            --gradient-26: linear-gradient(135deg, #4ade80 0%, #16a34a 100%);
+            --gradient-27: linear-gradient(135deg, #2dd4bf 0%, #0d9488 100%);
+            --gradient-28: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+            --gradient-29: linear-gradient(135deg, #818cf8 0%, #4f46e5 100%);
+        }
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-body{background:#f2f5f9;color:#333;scroll-behavior:smooth}
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: var(--light); color: #333; overflow-x: hidden; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
 
-/* HERO */
-.hero{
-  min-height:100vh;
-  background:linear-gradient(135deg,#1f4f64,#41a62a);
-  color:white;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  position:relative;
-  padding:40px 20px
-}
-.hero::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.35)}
-.hero *{position:relative;z-index:1}
-.hero img{
-  width:140px;
-  border-radius:50%;
-  border:5px solid white;
-  margin-bottom:20px
-}
-.hero h1{font-size:2.4rem;margin-bottom:10px}
-.hero p{font-size:1.2rem;margin-bottom:25px;max-width:700px}
-.hero button{
-  padding:12px 30px;
-  border:none;
-  border-radius:50px;
-  background:#c80018;
-  color:white;
-  font-weight:600;
-  cursor:pointer;
-  transition:.3s;
-  margin:10px;
-}
-.hero button:hover{transform:scale(1.08)}
+        /* --- HERO SECTION --- */
+        .hero {
+            position: relative;
+            min-height: 90vh;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(0, 153, 77, 0.85)), url('https://source.unsplash.com/random/1920x1080/?tabletennis');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
 
-/* VIDEO DESIGN BOX */
-.video-box{
-  margin-top:40px;
-  max-width:900px;
-  width:100%;
-  border-radius:20px;
-  box-shadow:0 15px 30px rgba(0,0,0,.3);
-  overflow:hidden;
-}
-.video-box video{
-  width:100%;
-  display:block;
-  border-radius:15px;
-}
+        .hero-content {
+            max-width: 900px;
+            z-index: 2;
+            animation: fadeInUp 1s ease-out;
+        }
 
-/* CV PANEL RIGHT TO LEFT */
-#cvPanel{
-  position:fixed;
-  top:0;
-  right:-100%;
-  width:100%;
-  max-width:600px;
-  height:100%;
-  background:white;
-  box-shadow:-5px 0 20px rgba(0,0,0,.2);
-  transition:0.6s ease;
-  z-index:999;
-  overflow-y:auto;
-}
-#cvPanel.open{
-  right:0;
-}
-.cv-header{
-  background:linear-gradient(135deg,#1f4f64,#41a62a);
-  color:white;
-  padding:25px;
-  text-align:center;
-  position:relative;
-}
-.cv-header img{
-  width:120px;
-  border-radius:50%;
-  border:4px solid white;
-  margin-bottom:10px;
-}
-.cv-header h2{
-  margin-bottom:5px;
-}
-.cv-header p{
-  font-size:0.95rem;
-}
-.close-btn{
-  position:absolute;
-  top:15px;
-  left:15px;
-  background:#c80018;
-  color:white;
-  border:none;
-  padding:8px 15px;
-  border-radius:20px;
-  cursor:pointer;
-}
-.cv-content{padding:25px}
-.cv-section{margin-bottom:25px}
-.cv-section h3{
-  color:#1f4f64;
-  margin-bottom:10px;
-  border-bottom:2px solid #1f4f64;
-  padding-bottom:5px;
-}
-.cv-section ul{list-style:none;padding-left:0}
-.cv-section li{margin-bottom:8px}
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid white;
+            object-fit: cover;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
 
-/* PAGE / PROGRAMME */
-.page{padding:80px 20px;background:white}
-.section{max-width:1100px;margin:auto;text-align:center}
-.section h2{font-size:2.4rem;color:#1f4f64;margin-bottom:50px}
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:30px
-}
-.card{
-  padding:35px 25px;
-  border-radius:25px;
-  color:white;
-  box-shadow:0 12px 25px rgba(0,0,0,.2);
-  text-align:left;
-  opacity:0;
-  transform:translateY(30px);
-  transition:1s
-}
-.card.visible{
-  opacity:1;
-  transform:translateY(0)
-}
-.card h3{margin-bottom:15px;font-size:1.4rem}
-.card ul{list-style:none;padding-left:0}
-.card li{margin-bottom:10px}
-.y2026{background:linear-gradient(135deg,#1f4f64,#3b7aa7)}
-.y2027{background:linear-gradient(135deg,#41a62a,#85d55d)}
-.y2028{background:linear-gradient(135deg,#c80018,#ff4b4b)}
-.y2029{background:linear-gradient(135deg,#6a1b9a,#ab47bc)}
+        .hero h1 { font-size: 3rem; font-weight: 700; margin-bottom: 10px; line-height: 1.2; }
+        .hero .subtitle { font-size: 1.5rem; font-weight: 300; opacity: 0.9; margin-bottom: 30px; }
+        
+        .btn-group { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+        
+        .btn {
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
 
-/* FOOTER */
-footer{text-align:center;padding:25px;font-size:.9rem;color:#777}
+        .btn-primary { background: var(--accent); color: white; box-shadow: 0 4px 15px rgba(225, 29, 72, 0.4); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(225, 29, 72, 0.6); }
+        
+        .btn-outline { background: transparent; border: 2px solid white; color: white; }
+        .btn-outline:hover { background: white; color: var(--secondary); }
 
-/* RESPONSIVE */
-@media(max-width:768px){
-  .hero h1{font-size:2.2rem}
-  #cvPanel{max-width:100%}
-}
-</style>
+        /* --- METHODOLOGIE (Le Cycle) --- */
+        .methodology {
+            padding: 80px 20px;
+            background: white;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .cycle-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .cycle-step {
+            flex: 1;
+            min-width: 180px;
+            position: relative;
+        }
+
+        .cycle-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 1.8rem;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            transition: 0.3s;
+        }
+        
+        .cycle-step:hover .cycle-icon { background: var(--primary); color: white; transform: rotate(360deg); }
+
+        .cycle-step h4 { font-size: 1.2rem; color: var(--secondary); margin-bottom: 5px; }
+        .cycle-step p { font-size: 0.9rem; color: #666; }
+
+        /* Flèches entre les étapes (Desktop seulement) */
+        @media(min-width: 992px) {
+            .cycle-step:not(:last-child)::after {
+                content: '\f061'; /* FontAwesome Arrow Right */
+                font-family: 'Font Awesome 6 Free';
+                font-weight: 900;
+                position: absolute;
+                top: 35%;
+                right: -25px;
+                transform: translateY(-50%);
+                color: #ccc;
+                font-size: 1.2rem;
+            }
+        }
+
+        /* --- PROGRAMME TIMELINE --- */
+        .timeline-section {
+            padding: 80px 20px;
+            background: #f1f5f9;
+        }
+
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .year-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            opacity: 0;
+            transform: translateY(30px); /* Pour l'animation */
+        }
+
+        .year-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .year-header {
+            padding: 25px;
+            color: white;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .year-number { font-size: 2.5rem; font-weight: 800; opacity: 0.9; }
+        .year-title { font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; text-align: right; }
+
+        /* Couleurs spécifiques par année */
+        .card-2026 .year-header { background: var(--gradient-26); }
+        .card-2027 .year-header { background: var(--gradient-27); }
+        .card-2028 .year-header { background: var(--gradient-28); }
+        .card-2029 .year-header { background: var(--gradient-29); }
+
+        .year-body { padding: 25px; }
+        .year-body ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.5;
+        }
+        
+        /* Puces colorées dynamiques */
+        .card-2026 li::before { content: '✔'; color: #16a34a; position: absolute; left: 0; font-weight: bold; }
+        .card-2027 li::before { content: '✔'; color: #0d9488; position: absolute; left: 0; font-weight: bold; }
+        .card-2028 li::before { content: '✔'; color: #0284c7; position: absolute; left: 0; font-weight: bold; }
+        .card-2029 li::before { content: '✔'; color: #4f46e5; position: absolute; left: 0; font-weight: bold; }
+
+        /* --- SIDEBAR CV --- */
+        .cv-sidebar {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            max-width: 500px;
+            height: 100vh;
+            background: white;
+            z-index: 1000;
+            box-shadow: -10px 0 30px rgba(0,0,0,0.2);
+            transition: 0.5s ease-in-out;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cv-sidebar.active { right: 0; }
+        .overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5); z-index: 999;
+            display: none; opacity: 0; transition: 0.3s;
+        }
+        .overlay.active { display: block; opacity: 1; }
+
+        .cv-header {
+            background: var(--secondary);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .close-cv {
+            position: absolute; top: 20px; left: 20px;
+            background: transparent; border: none; color: white;
+            font-size: 1.5rem; cursor: pointer;
+        }
+
+        .cv-content { padding: 30px; overflow-y: auto; flex-grow: 1; }
+        .cv-block { margin-bottom: 30px; }
+        .cv-block h3 { color: var(--primary); margin-bottom: 15px; border-bottom: 2px solid #eee; padding-bottom: 5px; }
+        .cv-block ul li { margin-bottom: 8px; padding-left: 0; }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--secondary);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        footer p { opacity: 0.7; font-size: 0.9rem; margin-top: 10px; }
+
+        /* ANIMATIONS */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .visible { animation: fadeInUp 0.8s forwards; }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .cycle-container { flex-direction: column; align-items: center; }
+            .cycle-step::after { display: none; }
+            .year-header { flex-direction: column-reverse; gap: 5px; text-align: center; }
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- HERO -->
-<section class="hero">
-  <img src="me.jpg" alt="Safidy">
-  <h1>Safidy Rotolonandrasana</h1>
-  <p>Pour une Section Tennis de Table de Tana moderne, structurée et accessible à tous.</p>
-
-  <div>
-    <button onclick="openCV()">Voir mon CV Sportif</button>
-    <button onclick="document.getElementById('programme').scrollIntoView({behavior:'smooth'})">
-      Découvrir notre programme 2026–2029
-    </button>
-  </div>
-
-  <div class="video-box">
-    <video autoplay loop muted playsinline>
-      <source src="Campagne.mp4" type="video/mp4">
-      Votre navigateur ne supporte pas la vidéo.
-    </video>
-  </div>
-</section>
-
-<!-- CV PANEL RIGHT -->
-<div id="cvPanel">
-  <div class="cv-header">
-    <button class="close-btn" onclick="closeCV()">Fermer</button>
-    <img src="me.jpg" alt="Safidy">
-    <h2>Safidy Rotolonandrasana</h2>
-    <p>Joueur – Entraîneur – Manager Sportif</p>
-  </div>
-
-  <div class="cv-content">
-    <div class="cv-section">
-      <h3>Profil Personnel</h3>
-      <ul>
-        <li>Originaire de Moramanga</li>
-        <li>Résidant à Antananarivo depuis 2009</li>
-        <li>Marié, père de deux enfants</li>
-        <li>Ingénieur Géophysicien</li>
-      </ul>
+    <div class="overlay" onclick="toggleCV()"></div>
+    <div class="cv-sidebar" id="cvSidebar">
+        <div class="cv-header">
+            <button class="close-cv" onclick="toggleCV()"><i class="fas fa-times"></i></button>
+            <img src="me.jpg" alt="Safidy" style="width:100px; height:100px; border-radius:50%; border:3px solid white;">
+            <h2>Safidy Rotolonandrasana</h2>
+            <p>Candidat Section Tana</p>
+        </div>
+        <div class="cv-content">
+            <div class="cv-block">
+                <h3><i class="fas fa-user"></i> Personnel</h3>
+                <ul>
+                    <li><strong>Origine :</strong> Moramanga</li>
+                    <li><strong>Résidence :</strong> Antananarivo (depuis 2009)</li>
+                    <li><strong>Situation :</strong> Marié, 2 enfants</li>
+                    <li><strong>Profession :</strong> Ingénieur Géophysicien</li>
+                </ul>
+            </div>
+            <div class="cv-block">
+                <h3><i class="fas fa-table-tennis"></i> Parcours Sportif</h3>
+                <ul>
+                    <li>Ancien membre de l’Équipe Nationale Junior</li>
+                    <li>Ancien membre de l’Équipe Nationale Senior</li>
+                    <li>Joueur classé 1ère série</li>
+                </ul>
+            </div>
+            <div class="cv-block">
+                <h3><i class="fas fa-briefcase"></i> Compétences</h3>
+                <ul>
+                    <li>Gestion de projets et leadership</li>
+                    <li>Organisation d'événements sportifs</li>
+                    <li>Communication et stratégie digitale</li>
+                </ul>
+            </div>
+        </div>
     </div>
 
-    <div class="cv-section">
-      <h3>Parcours Sportif</h3>
-      <ul>
-        <li>Ancien membre de l’Équipe Nationale Junior</li>
-        <li>Ancien membre de l’Équipe Nationale Senior</li>
-        <li>Joueur en 1ère serie </li>
-      </ul>
-    </div>
+    <section class="hero">
+        <div class="hero-content">
+            <img src="me.jpg" alt="Safidy" class="profile-pic"> 
+            <h1>SAFIDY ROTOLONANDRASANA</h1>
+            <p class="subtitle">Une vision moderne pour le Tennis de Table à Tana</p>
+            
+            <div class="btn-group">
+                <button class="btn btn-primary" onclick="document.getElementById('programme').scrollIntoView({behavior: 'smooth'})">
+                    <i class="fas fa-rocket"></i> Voir le Programme
+                </button>
+                <button class="btn btn-outline" onclick="toggleCV()">
+                    <i class="fas fa-id-card"></i> Mon Parcours
+                </button>
+            </div>
+        </div>
+    </section>
 
-    <div class="cv-section">
-      <h3>Compétences</h3>
-      <ul>
-        <li>Gestion de projets sportifs</li>
-        <li>Leadership et communication</li>
-        <li>Organisation d’événements</li>
-      </ul>
-    </div>
-  </div>
-</div>
+    <section class="methodology">
+        <h2 class="section-title">Notre Processus</h2>
+        <p style="margin-bottom:40px; color:#666;">Une approche cyclique et structurée pour garantir le succès.</p>
+        
+        <div class="cycle-container">
+            <div class="cycle-step">
+                <div class="cycle-icon"><i class="fas fa-bullseye"></i></div>
+                <h4>Objectif</h4>
+                <p>Vision claire</p>
+            </div>
+            <div class="cycle-step">
+                <div class="cycle-icon"><i class="fas fa-clipboard-check"></i></div>
+                <h4>Préparation</h4>
+                <p>Planification</p>
+            </div>
+            <div class="cycle-step">
+                <div class="cycle-icon"><i class="fas fa-pencil-ruler"></i></div>
+                <h4>Élaboration</h4>
+                <p>Création</p>
+            </div>
+            <div class="cycle-step">
+                <div class="cycle-icon"><i class="fas fa-hand-holding-dollar"></i></div>
+                <h4>Financement</h4>
+                <p>Ressources</p>
+            </div>
+            <div class="cycle-step">
+                <div class="cycle-icon"><i class="fas fa-flag-checkered"></i></div>
+                <h4>Réalisation</h4>
+                <p>Action</p>
+            </div>
+        </div>
+    </section>
 
-<!-- PROGRAMME -->
-<section class="page" id="programme">
-  <div class="section">
-    <h2>Programme 2026 – 2029</h2>
+    <section class="timeline-section" id="programme">
+        <div style="text-align:center; margin-bottom:50px;">
+            <h2 class="section-title">Programme 2026 - 2029</h2>
+            <p>Une feuille de route précise pour redynamiser la section.</p>
+        </div>
 
-    <div class="grid">
+        <div class="timeline-grid">
+            <div class="year-card card-2026 scroll-animate">
+                <div class="year-header">
+                    <span class="year-number">2026</span>
+                    <span class="year-title">Lancement &<br>Fondations</span>
+                </div>
+                <div class="year-body">
+                    <ul>
+                        <li><strong>Digitalisation :</strong> Plateforme gestion joueurs/arbitres</li>
+                        <li><strong>Initiation :</strong> Programmes jeunes & débutants</li>
+                        <li><strong>Compétition :</strong> Tournois par catégories d'âge</li>
+                        <li><strong>Détection :</strong> Identification des talents</li>
+                        <li><strong>Formation :</strong> Joueurs, arbitres, animateurs</li>
+                        <li><strong>Comms :</strong> Système de communication moderne</li>
+                    </ul>
+                </div>
+            </div>
 
-      <!-- 2026 -->
-      <div class="card y2026 observe">
-        <h3> 2026 – Mise en place</h3>
-        <ul>
-          <li>Digitalisation : gestion matchs joueurs et arbitres</li>
-          <li>Initiation jeunes et débutants</li>
-          <li>Matchs de section </li>
-          <li>Mise en place de tournois par catégories</li>
-          <li>Détection des jeunes talents</li>
-          <li>Formation : joueurs, arbitres, animateurs</li>
-          <li>Mise en place d’un système de communication moderne</li>
-        </ul>
-      </div>
+            <div class="year-card card-2027 scroll-animate">
+                <div class="year-header">
+                    <span class="year-number">2027</span>
+                    <span class="year-title">Expansion &<br>Partenariats</span>
+                </div>
+                <div class="year-body">
+                    <ul>
+                        <li><strong>Data :</strong> Système d'information & Stats en ligne</li>
+                        <li><strong>Réseau :</strong> Partenariats écoles, universités, entreprises</li>
+                        <li><strong>Terrain :</strong> Matchs de section réguliers</li>
+                        <li><strong>Suivi :</strong> Classements en temps réel</li>
+                        <li><strong>Visibilité :</strong> Communication structurée des résultats</li>
+                    </ul>
+                </div>
+            </div>
 
-      <!-- 2027 -->
-      <div class="card y2027 observe">
-        <h3> 2027 – Structuration</h3>
-        <ul>
-          <li>Mise en place d’un système d’information numérique en ligne</li>
-          <li>Formations continues pour arbitres et joueurs</li>
-          <li>Partenariats avec écoles, universités et entreprises locales</li>
-          <li>Matchs de section réguliers et tournois trimestriels</li>
-          <li>Classements et statistiques en ligne</li>
-          <li>Communication structurée : publications et résultats</li>
-        </ul>
-      </div>
+            <div class="year-card card-2028 scroll-animate">
+                <div class="year-header">
+                    <span class="year-number">2028</span>
+                    <span class="year-title">Performance &<br>Durabilité</span>
+                </div>
+                <div class="year-body">
+                    <ul>
+                        <li><strong>Expertise :</strong> Stages techniques régionaux</li>
+                        <li><strong>Élite :</strong> Tournoi Annuel Majeur à Tana</li>
+                        <li><strong>Soutien :</strong> Aide aux joueurs et entraîneurs</li>
+                        <li><strong>Média :</strong> Visibilité accrue réseaux sociaux</li>
+                        <li><strong>Autonomie :</strong> Recherche active de sponsors</li>
+                        <li><strong>Héritage :</strong> Transmission des bonnes pratiques</li>
+                    </ul>
+                </div>
+            </div>
 
-      <!-- 2028 -->
-      <div class="card y2028 observe">
-        <h3>2028 – Performance & durabilité</h3>
-        <ul>
-          <li>Système de soutien aux joueurs et entraîneurs</li>
-          <li>Stages techniques </li>
-          <li>Vulgarisation continue et rayonnement local</li>
-          <li>Matchs de section + tournoi annuel majeur à Tana</li>
-          <li>Visibilité médiatique et réseaux sociaux</li>
-          <li>Autonomie   : sponsors et événements</li>
-          <li>Bilan et transmission durable des bonnes pratiques</li>
-        </ul>
-      </div>
+            <div class="year-card card-2029 scroll-animate">
+                <div class="year-header">
+                    <span class="year-number">2029</span>
+                    <span class="year-title">Rayonnement &<br>Autonomie</span>
+                </div>
+                <div class="year-body">
+                    <ul>
+                        <li><strong>Inclusion :</strong> Femmes, loisirs, quartiers</li>
+                        <li><strong>Stabilité :</strong> Autonomie via sponsors & événements</li>
+                        <li><strong>National :</strong> Tournoi majeur national</li>
+                        <li><strong>Elite :</strong> Stages avancés pour talents détectés</li>
+                        <li><strong>Bilan :</strong> Transmission durable à la future équipe</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      <!-- 2029 -->
-      <div class="card y2029 observe">
-        <h3> 2029 – Rayonnement national & autonomie</h3>
-        <ul>
-          <li>Matchs de section réguliers </li>
-          <li>Tournoi majeur national à Tana</li>
-          <li>Soutien aux joueurs et entraîneurs</li>
-          <li>Stages techniques avancés pour talents détectés</li>
-          <li>Vulgarisation et inclusion (femmes, loisirs, quartiers)</li>
-          <li>Communication active : réseaux sociaux et médias locaux</li>
-          <li>Autonomie  : sponsors et événements</li>
-          <li>Bilan final et transmission durable à la future équipe</li>
-        </ul>
-      </div>
+    <footer>
+        <h3>Safidy Rotolonandrasana</h3>
+        <p>Candidat à la Présidence de la Section Tennis de Table Tana</p>
+        <div style="margin-top: 20px; font-size: 1.5rem;">
+            <a href="#" style="margin: 0 10px;"><i class="fab fa-facebook"></i></a>
+            <a href="#" style="margin: 0 10px;"><i class="fab fa-instagram"></i></a>
+            <a href="#" style="margin: 0 10px;"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p style="margin-top: 30px; font-size: 0.8rem;">© 2026 Campagne Section Tana. Tous droits réservés.</p>
+    </footer>
 
-    </div>
-  </div>
+    <script>
+        // Gestion du CV Slide-out
+        function toggleCV() {
+            const sidebar = document.getElementById('cvSidebar');
+            const overlay = document.querySelector('.overlay');
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
 
-  <div class="why">
-    <h2>Pourquoi je me présente</h2>
-    <p>
-     Parce que notre section mérite une nouvelle dynamique. Une vision moderne, communicante et ambitieuse, 
-      pour renforcer la visibilité, la popularité et l’avenir du tennis de table à Madagascar
-    </p>
-  </div>
+        // Animation au scroll (Intersection Observer)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // On arrête d'observer une fois animé
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
 
-  <footer>
-    © 2026–2029 • Safidy Rotolonandrasana • Section Tennis de Table Tana
-  </footer>
-</section>
-
-<script>
-function openCV(){
-  document.getElementById("cvPanel").classList.add("open");
-}
-function closeCV(){
-  document.getElementById("cvPanel").classList.remove("open");
-}
-
-/* Animation des cartes */
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if(e.isIntersecting){
-      e.target.classList.add('visible');
-      observer.unobserve(e.target);
-    }
-  });
-},{threshold:0.2});
-document.querySelectorAll('.observe').forEach(el => observer.observe(el));
-</script>
-
+        // Cible tous les éléments à animer
+        document.querySelectorAll('.scroll-animate').forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
-
-
-
-
-
